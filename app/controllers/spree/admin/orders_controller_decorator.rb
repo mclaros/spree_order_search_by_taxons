@@ -1,11 +1,6 @@
 module Spree
   module Admin
     OrdersController.class_eval do
-      def show
-        breakme!
-        render :by_taxon_index
-      end
-
       def by_taxon
         params[:q] ||= {}
         params[:q][:completed_at_not_null] ||= '1' if Spree::Config[:show_only_complete_orders_by_default]
